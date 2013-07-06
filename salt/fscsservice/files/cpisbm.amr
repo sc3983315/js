@@ -1,0 +1,17 @@
+ID                      200303000065
+Name                    CPISBM
+Describe                CPIS Bind Monitor
+Behaviour               manage
+Switch                  enable
+StartCmd                /etc/init.d/named start
+StopCmd                 /etc/init.d/named stop
+GetStatus               /etc/init.d/named status
+RestartCmd              /etc/init.d/named restart
+ReloadCmd               /etc/init.d/named reload
+GetVersion              /usr/sbin/named -v
+PidFile                 /var/run/named.pid
+KeepLive                300s
+StartRetryInterval      300s
+MaxStartRetryTimes      3
+StopRetryInterval       300s
+MaxStopRetryTimes       1

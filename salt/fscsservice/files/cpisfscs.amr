@@ -1,0 +1,16 @@
+ID                      200303000068
+Name                    CPISFSCS
+Describe                Mobile  FSCS
+Behaviour               manage
+Switch                  enable
+StartCmd                service haproxy start
+StopCmd                 killall -9 haproxy
+GetStatus               service haproxy status
+ReloadCmd               service haproxy reload
+GetVersion              fscs -v  
+PidFile                 /var/run/haproxy.pid
+KeepLive                60s
+StartRetryInterval      60s
+MaxStartRetryTimes      3
+StopRetryInterval       60s
+MaxStopRetryTimes       1

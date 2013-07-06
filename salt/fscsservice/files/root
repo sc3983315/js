@@ -1,0 +1,5 @@
+##
+*/5 * * * * /usr/local/nginx/bin/nginxlog -r 1>/dev/null 2>&1
+1 */2 * * * /usr/local/haproxy/bin/log_rotate.sh 1>/dev/null 2>&1
+*/15 * * * * /root/Name/NamedTest.sh 1>/dev/null 2>&1
+59 23 * * * /usr/sbin/logrotate -f /etc/logrotate.d/nginx >/dev/null 2>&1

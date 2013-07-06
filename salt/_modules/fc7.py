@@ -1,0 +1,2 @@
+def shencan():
+      return  'date'

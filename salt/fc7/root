@@ -1,0 +1,12 @@
+# HEADER: not be deleted, as doing so could cause duplicate cron jobs.
+
+# Puppet Name: puppet check
+#0 4 * * * /root/Name/FDNSforFC_RST.sh >/dev/null 2>&1
+*/1 * * * * /usr/local/squid/bin/asyncFetch.sh >/dev/null 2>&1
+*/5 * * * * /etc/init.d/puppet status || (killall -9 puppetd;rm -rf /var/run/puppet/agent.pid ;/etc/init.d/puppet start) 
+#*/5 * * * * /root/Name/FDNSTest_1.sh >/dev/null 2>&1
+*/5 * * * * /root/Name/WgetWhite.sh >/dev/null 2>&1
+0 */2 * * * /root/purgeall_fc6.sh >/dev/null 2>&1
+0 0 * * * /usr/local/flexicache/sbin/flexicache -k rotatelog >/dev/null 2>&1
+0 0 * * * /usr/local/squid/bin/refreshd -k log_rotate >/dev/null 2>&1
+0 2 * * * /usr/local/squid/bin/purgebdb.sh >/dev/null 2>&1

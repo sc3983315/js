@@ -1,0 +1,7 @@
+*/10 * * * * /usr/local/squid/bin/preloadmgr 1>/dev/null 2>&1
+*/5 * * * * /root/Name/FDNSTest_1.sh >/dev/null 2>&1
+*/5 * * * * /root/Name/WgetWhite.sh >/dev/null 2>&1
+0 0 * * * /usr/local/flexicache/sbin/flexicache -k rotatelog >/dev/null 2>&1
+0 0 * * * /usr/local/squid/bin/refreshd -k log_rotate >/dev/null 2>&1
+0 2 * * * /usr/local/squid/bin/purgebdb.sh >/dev/null 2>&1
+0 5 * * * root /etc/init.d/flexicache swaplog >/dev/null 2>&1

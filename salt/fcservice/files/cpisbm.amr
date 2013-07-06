@@ -1,0 +1,17 @@
+ID                      200303000065
+Name                    CPISBM
+Describe                CPIS Bind Monitor
+Behaviour               manage
+Switch                  enable
+StartCmd                servcie fdns start
+StopCmd                 service fdns stop
+GetStatus               echo cc
+RestartCmd              service fdns restart
+ReloadCmd               service fdns reload
+GetVersion              /FlexiDNS/application/sbin/fdns -v
+PidFile                 /FlexiDNS/application/var/run/fdns.pid
+KeepLive                30s
+StartRetryInterval      60s
+MaxStartRetryTimes      3
+StopRetryInterval       300s
+MaxStopRetryTimes       1
